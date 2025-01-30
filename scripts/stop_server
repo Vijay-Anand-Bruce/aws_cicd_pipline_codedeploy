@@ -1,6 +1,6 @@
 #!/bin/bash
-isExistApp = `pgrep httpd`
-if [[ -n  $isExistApp ]]; then
-    service httpd stop        
-fi
+isExistApp=$(pgrep nginx)  # Check if Nginx is running
 
+if [[ -n $isExistApp ]]; then  # Ensure it's a Bash-compatible condition
+    sudo service nginx stop  # Stop Nginx
+fi
